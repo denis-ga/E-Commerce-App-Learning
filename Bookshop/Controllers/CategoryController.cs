@@ -1,4 +1,4 @@
-﻿using Bookshop.Data;
+﻿using Bookshop.DataAccess.Data;
 using Bookshop.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
