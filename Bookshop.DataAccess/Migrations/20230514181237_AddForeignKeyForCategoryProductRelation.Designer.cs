@@ -3,6 +3,7 @@ using Bookshop.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bookshop.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230514181237_AddForeignKeyForCategoryProductRelation")]
+    partial class AddForeignKeyForCategoryProductRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,10 +88,6 @@ namespace Bookshop.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<double>("ListPrice")
                         .HasColumnType("float");
 
@@ -119,7 +118,6 @@ namespace Bookshop.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "Идеальный программист\" и \"Чистый код\" - легендарные бестселлеры Роберта Мартина - рассказывают, как достичь высот профессионализма. \"Чистая архитектура\" продолжает эту тему, но не предлагает несколько вариантов в стиле \"решай сам\", а объясняет, что именно следует делать, по какой причине и почему именно такое решение станет принципиально важным для вашего успеха.",
                             ISBN = "9785446107728",
-                            ImageUrl = "",
                             ListPrice = 15.69,
                             Price = 15.0,
                             Price100 = 12.0,
@@ -133,7 +131,6 @@ namespace Bookshop.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "Даже плохой программный код может работать. Однако если код не является \"чистым\", это всегда будет мешать развитию проекта и компании-разработчика, отнимая значительные ресурсы на его поддержку и \"укрощение\".Эта книга посвящена хорошему программированию. Она полна реальных примеров кода.",
                             ISBN = "9785446109609",
-                            ImageUrl = "",
                             ListPrice = 13.69,
                             Price = 13.0,
                             Price100 = 10.0,
@@ -147,7 +144,6 @@ namespace Bookshop.DataAccess.Migrations
                             CategoryId = 3,
                             Description = "Всех программистов, которые добиваются успеха в мире разработки ПО, отличает один общий признак: они больше всего заботятся о качестве создаваемого программного обеспечения. Это — основа для них. Потому что они являются профессионалами своего дела. ",
                             ISBN = "9785446110674",
-                            ImageUrl = "",
                             ListPrice = 11.59,
                             Price = 11.0,
                             Price100 = 8.0,
